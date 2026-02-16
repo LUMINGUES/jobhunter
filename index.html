@@ -1,85 +1,218 @@
-// script.js
-
-// Mantém o código anterior do tema e modais...
-document.addEventListener('DOMContentLoaded', () => {
-    if(localStorage.getItem('theme') === 'dark') document.body.classList.add('dark');
-});
-
-function toggleTheme() {
-    document.body.classList.toggle('dark');
-    localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
-}
-
-function closeModal(id) {
-    document.getElementById(id).classList.add('hidden');
-}
-
-// --- NOVO: FUNÇÃO DO ALERTA DE DOWNLOAD ---
-function alertarDesenvolvimento() {
-    alert("🚧 Aplicação em Desenvolvimento 🚧\n\nCaso queira ver o README ou baixar o código, entre em contato pelo WhatsApp:\n\n📞 (14) 99108-1899");
-}
-
-// Função de abrir modal (MANTIDA)
-function abrirModal(vaga) {
-    if(!vaga) return;
-    document.getElementById('mod-id').value = vaga.id;
-    document.getElementById('mod-id-ia').value = vaga.id; // Garante que o ID vá para a IA
-    document.getElementById('mod-titulo').innerText = vaga.titulo;
-    document.getElementById('mod-empresa').innerHTML = `<i class="fas fa-building"></i> ${vaga.empresa}`;
-    document.getElementById('mod-status').value = vaga.status;
-    document.getElementById('mod-plataforma').value = vaga.plataforma;
-    document.getElementById('mod-datalimite').value = vaga.data_limite || '';
-    document.getElementById('mod-link').href = vaga.link;
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobHunter - Otimize sua Carreira</title>
     
-    const descDiv = document.getElementById('mod-desc');
-    if(vaga.descricao && vaga.descricao !== "null" && vaga.descricao.trim() !== "") {
-        descDiv.innerHTML = vaga.descricao.replace(/\n/g, '<br>');
-    } else {
-        descDiv.innerHTML = '<p class="text-gray-400 italic">Sem descrição.</p>';
-    }
+    <script src="https://cdn.tailwindcss.com"></script>
     
-    document.getElementById('modal-vaga').classList.remove('hidden');
-}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-// Drag and Drop (MANTIDO)
-function carregarArea(id, nome) {
-    const grid = document.getElementById('area-grid');
-    document.getElementById('area-titulo').innerText = nome;
-    document.getElementById('modal-area').classList.remove('hidden');
-    grid.innerHTML = '';
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        
+        /* Fundo Moderno Dark */
+        .hero-bg {
+            background-color: #0f172a;
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
+                radial-gradient(at 50% 0%, hsla(225,39%,30%,1) 0, transparent 50%), 
+                radial-gradient(at 100% 0%, hsla(339,49%,30%,1) 0, transparent 50%);
+        }
+        
+        /* Efeito de vidro no menu */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e2e8f0;
+        }
 
-    const itens = Object.values(window.AREA_DB || {}).filter(i => i.area_id == id);
+        /* Código visual */
+        .code-snippet {
+            background: #1e293b;
+            color: #a5b4fc;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body class="text-slate-800 bg-white">
 
-    if(itens.length === 0){
-        grid.innerHTML = '<div class="col-span-full py-10 text-center text-gray-400">Pasta Vazia</div>';
-        return;
-    }
-
-    itens.forEach(v => {
-        let safeVaga = JSON.stringify(v).replace(/"/g, '&quot;');
-        grid.innerHTML += `
-            <div class="bg-white dark:bg-gray-800 p-4 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm group relative" data-id="${v.item_id}">
-                <div class="flex justify-between">
-                    <h4 class="font-bold text-blue-600 dark:text-blue-400 cursor-pointer" onclick='abrirModal(${safeVaga})'>${v.titulo}</h4>
-                    <form method="POST">
-                        <input type="hidden" name="excluir_da_pasta" value="1">
-                        <input type="hidden" name="id" value="${v.item_id}">
-                        <button class="text-gray-300 hover:text-red-500"><i class="fas fa-trash"></i></button>
-                    </form>
+    <nav class="fixed w-full z-50 glass-nav">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-crosshairs text-blue-600 text-2xl"></i>
+                    <span class="font-bold text-xl tracking-tight text-slate-900">JobHunter</span>
                 </div>
-                <p class="text-xs text-gray-500 font-bold">${v.empresa}</p>
-            </div>`;
-    });
+                <div class="hidden md:flex space-x-8">
+                    <a href="#features" class="text-slate-600 hover:text-blue-600 font-medium transition">Funcionalidades</a>
+                    <a href="#how-to" class="text-slate-600 hover:text-blue-600 font-medium transition">Instalação</a>
+                    <a href="#faq" class="text-slate-600 hover:text-blue-600 font-medium transition">FAQ</a>
+                </div>
+                <div>
+                    <button onclick="baixarCodigo()" class="bg-blue-600 text-white px-5 py-2.5 rounded-full font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-500/30">
+                        Baixar Agora
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-    if(typeof Sortable !== 'undefined') {
-        new Sortable(grid, {
-            animation: 150,
-            onEnd: function() {
-                let ids = Array.from(grid.querySelectorAll('[data-id]')).map(el => el.dataset.id);
-                let fd = new FormData();
-                ids.forEach((id, i) => fd.append(`ol[${i}]`, id));
-                fetch(window.location.href, { method: 'POST', body: fd });
-            }
-        });
-    }
-}
+    <section class="hero-bg text-white pt-32 pb-20 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <div class="inline-block px-4 py-1.5 mb-6 rounded-full bg-blue-900/50 border border-blue-700 text-blue-300 text-sm font-semibold animate-pulse">
+                🚀 Versão V40 Disponível
+            </div>
+            <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+                Domine sua Busca de Emprego <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Com Inteligência e Foco.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-400 mb-10 max-w-2xl mx-auto">
+                Diga adeus às planilhas bagunçadas. O JobHunter organiza suas candidaturas, gera currículos com IA e mantém seu foco no "Sim".
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <button onclick="baixarCodigo()" class="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition flex items-center justify-center gap-2 shadow-xl shadow-blue-600/20">
+                    <i class="fas fa-download"></i> Download Grátis
+                </button>
+                <a href="#how-to" class="bg-slate-800 text-white border border-slate-700 px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-700 transition flex items-center justify-center gap-2">
+                    <i class="fas fa-book"></i> Guia de Instalação
+                </a>
+            </div>
+            
+            <div class="mt-16 relative mx-auto max-w-4xl">
+                <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-teal-600 rounded-2xl blur opacity-30"></div>
+                <div class="relative bg-slate-900 border border-slate-800 rounded-xl shadow-2xl overflow-hidden p-2">
+                    <div class="flex gap-2 mb-2 px-2 bg-slate-800/50 py-2 rounded-t-lg">
+                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    </div>
+                    <div class="bg-slate-50 rounded-b-lg h-64 md:h-96 flex items-center justify-center text-slate-400 relative overflow-hidden">
+                        <div class="text-center z-10">
+                            <i class="fas fa-columns text-6xl mb-4 text-blue-200"></i>
+                            <p class="font-bold text-slate-500">Painel de Vagas JobHunter</p>
+                        </div>
+                        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#cbd5e1 1px, transparent 1px); background-size: 20px 20px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="py-20 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Tudo o que você precisa</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">Leve, rápido e roda localmente na sua máquina. Privacidade total.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition group">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 text-2xl mb-6 group-hover:scale-110 transition">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-slate-800">IA Integrada</h3>
+                    <p class="text-slate-600 leading-relaxed">Gere resumos profissionais personalizados para cada vaga. Aumente suas chances adaptando seu perfil automaticamente.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition group">
+                    <div class="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center text-emerald-600 text-2xl mb-6 group-hover:scale-110 transition">
+                        <i class="fas fa-folder-open"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-slate-800">Organização Total</h3>
+                    <p class="text-slate-600 leading-relaxed">Crie pastas (ex: "Urgente", "Remoto") e arraste suas vagas. Mantenha seu fluxo de trabalho sempre limpo.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition group">
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600 text-2xl mb-6 group-hover:scale-110 transition">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-slate-800">Gerador de PDF</h3>
+                    <p class="text-slate-600 leading-relaxed">Exporte currículos otimizados em PDF com um clique, prontos para envio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-to" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="bg-slate-900 rounded-3xl p-8 md:p-12 shadow-2xl text-white relative overflow-hidden">
+                <div class="absolute top-0 right-0 -mt-10 -mr-10 w-64 h-64 bg-blue-600 rounded-full blur-3xl opacity-20"></div>
+
+                <h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
+                    <i class="fas fa-terminal text-blue-400"></i> Como instalar
+                </h2>
+
+                <div class="space-y-8 relative z-10">
+                    <div class="flex gap-6">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center font-bold">1</div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Instale o XAMPP</h3>
+                            <p class="text-slate-300 mb-2">Necessário para rodar PHP localmente.</p>
+                            <a href="https://www.apachefriends.org/pt_br/index.html" target="_blank" class="text-blue-300 hover:text-white underline text-sm">Site Oficial &rarr;</a>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-6">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center font-bold">2</div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Salve o Arquivo</h3>
+                            <p class="text-slate-300 mb-3">Coloque o arquivo <span class="code-snippet">jobhunter.php</span> na pasta:</p>
+                            <div class="bg-black/50 p-3 rounded border border-slate-700 font-mono text-sm">
+                                C:\xampp\htdocs\jobhunter.php
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-6">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center font-bold">3</div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Acesse</h3>
+                            <p class="text-slate-300">Abra o navegador e digite:</p>
+                            <a href="http://localhost/jobhunter.php" class="text-blue-300 hover:text-white font-mono text-lg block mt-2">http://localhost/jobhunter.php</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="download" class="py-24 bg-blue-600 text-center px-4 relative overflow-hidden">
+        <div class="relative z-10 max-w-3xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Pronto para acelerar sua carreira?</h2>
+            <p class="text-blue-100 text-lg mb-10">Código fonte aberto, gratuito e vitalício.</p>
+            
+            <button onclick="baixarCodigo()" class="bg-white text-blue-600 text-xl font-extrabold px-10 py-5 rounded-full shadow-2xl hover:scale-105 transition transform flex items-center justify-center gap-3 mx-auto">
+                <i class="fas fa-download"></i> BAIXAR CÓDIGO FONTE (V40)
+            </button>
+            <p class="mt-4 text-blue-200 text-sm">Requer PHP 7.4 ou superior</p>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-slate-400 py-10 text-center border-t border-slate-800">
+        <p>&copy; 2026 JobHunter Project. Desenvolvido para transformar buscas em conquistas.</p>
+        <div class="flex justify-center gap-4 mt-4 text-2xl">
+            <a href="#" class="hover:text-white transition"><i class="fab fa-github"></i></a>
+            <a href="#" class="hover:text-white transition"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        function baixarCodigo() {
+            // Mensagem solicitada
+            const mensagem = "🚧 Aplicação em Desenvolvimento 🚧\n\n" +
+                           "Caso queira ver o README ou baixar o código fonte completo,\n" +
+                           "entre em contato pelo WhatsApp:\n\n" +
+                           "📞 (14) 99108-1899";
+            
+            alert(mensagem);
+        }
+    </script>
+</body>
+</html>
