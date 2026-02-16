@@ -1,280 +1,23 @@
-<!DOCTYPE html>
-<html lang="pt-br" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JobHunter - Otimize sua Carreira</title>
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-        .hero-bg {
-            background-color: #0f172a;
-            background-image: radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), radial-gradient(at 50% 0%, hsla(225,39%,30%,1) 0, transparent 50%), radial-gradient(at 100% 0%, hsla(339,49%,30%,1) 0, transparent 50%);
-        }
-        .code-snippet {
-            background: #1e293b;
-            color: #a5b4fc;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-family: monospace;
-            font-size: 0.9em;
-        }
-    </style>
-</head>
-<body class="text-slate-800 bg-white">
-
-    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center gap-2">
-                    <i class="fas fa-crosshairs text-blue-600 text-2xl"></i>
-                    <span class="font-bold text-xl tracking-tight text-slate-900">JobHunter</span>
-                </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#features" class="text-slate-600 hover:text-blue-600 font-medium transition">Funcionalidades</a>
-                    <a href="#how-to" class="text-slate-600 hover:text-blue-600 font-medium transition">Instalação</a>
-                    <a href="#faq" class="text-slate-600 hover:text-blue-600 font-medium transition">FAQ</a>
-                </div>
-                <div>
-                    <a href="#download" class="bg-blue-600 text-white px-5 py-2.5 rounded-full font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-500/30">Baixar Agora</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <section class="hero-bg text-white pt-32 pb-20 px-4">
-        <div class="max-w-6xl mx-auto text-center">
-            <div class="inline-block px-4 py-1.5 mb-6 rounded-full bg-blue-900/50 border border-blue-700 text-blue-300 text-sm font-semibold animate-pulse">
-                🚀 Versão V40 Disponível
-            </div>
-            <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
-                Domine sua Busca de Emprego <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Com Inteligência e Foco.</span>
-            </h1>
-            <p class="text-lg md:text-xl text-slate-400 mb-10 max-w-2xl mx-auto">
-                Diga adeus às planilhas bagunçadas. O JobHunter é um sistema **Monolito PHP** que organiza suas candidaturas, gera currículos com IA e mantém seu foco no que importa: conseguir o "Sim".
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#download" class="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition flex items-center justify-center gap-2 shadow-xl shadow-blue-600/20">
-                    <i class="fas fa-download"></i> Download Grátis
-                </a>
-                <a href="#how-to" class="bg-slate-800 text-white border border-slate-700 px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-700 transition flex items-center justify-center gap-2">
-                    <i class="fas fa-book"></i> Guia de Instalação
-                </a>
-            </div>
-            
-            <div class="mt-16 relative mx-auto max-w-4xl">
-                <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-teal-600 rounded-2xl blur opacity-30"></div>
-                <div class="relative bg-slate-900 border border-slate-800 rounded-xl shadow-2xl overflow-hidden p-2">
-                    <div class="flex gap-2 mb-2 px-2">
-                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                    </div>
-                    <div class="bg-slate-50 rounded-lg h-64 md:h-96 flex items-center justify-center text-slate-400">
-                        <div class="text-center">
-                            <i class="fas fa-columns text-6xl mb-4 text-blue-200"></i>
-                            <p class="font-bold">Interface do Painel JobHunter</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="features" class="py-20 bg-slate-50">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-slate-900 mb-4">Tudo o que você precisa em um arquivo</h2>
-                <p class="text-slate-600 max-w-2xl mx-auto">O JobHunter foi desenhado para ser leve, rápido e rodar localmente na sua máquina, garantindo total privacidade dos seus dados.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition group">
-                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 text-2xl mb-6 group-hover:scale-110 transition">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-slate-800">IA Integrada (DeepSeek)</h3>
-                    <p class="text-slate-600 leading-relaxed">Gere resumos profissionais personalizados para cada vaga usando Inteligência Artificial. Aumente suas chances adaptando seu perfil automaticamente.</p>
-                </div>
-
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition group">
-                    <div class="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center text-emerald-600 text-2xl mb-6 group-hover:scale-110 transition">
-                        <i class="fas fa-folder-open"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-slate-800">Organização por Pastas</h3>
-                    <p class="text-slate-600 leading-relaxed">Crie pastas personalizadas (ex: "Urgente", "Remoto") e arraste suas vagas para organizar seu fluxo de trabalho. Mantenha sua "Inbox" sempre limpa.</p>
-                </div>
-
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition group">
-                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600 text-2xl mb-6 group-hover:scale-110 transition">
-                        <i class="fas fa-file-pdf"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-slate-800">Gerador de PDF</h3>
-                    <p class="text-slate-600 leading-relaxed">Exporte currículos otimizados em PDF com um clique, prontos para impressão ou envio, contendo seu resumo gerado por IA.</p>
-                </div>
-            </div>
-            
-            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-white p-6 rounded-xl border border-slate-200 flex items-start gap-4">
-                    <i class="fas fa-moon text-slate-700 text-xl mt-1"></i>
-                    <div>
-                        <h4 class="font-bold text-slate-800">Dark Mode Nativo</h4>
-                        <p class="text-sm text-slate-600">Trabalhe de noite sem cansar a vista. Alternância de tema com um clique.</p>
-                    </div>
-                </div>
-                <div class="bg-white p-6 rounded-xl border border-slate-200 flex items-start gap-4">
-                    <i class="fas fa-database text-blue-600 text-xl mt-1"></i>
-                    <div>
-                        <h4 class="font-bold text-slate-800">SQLite Automático</h4>
-                        <p class="text-sm text-slate-600">Sem configuração complexa de banco de dados. O sistema cria e gerencia o arquivo DB sozinho.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="how-to" class="py-20 bg-white">
-        <div class="max-w-4xl mx-auto px-4">
-            <div class="bg-slate-900 rounded-3xl p-8 md:p-12 shadow-2xl text-white relative overflow-hidden">
-                <div class="absolute top-0 right-0 -mt-10 -mr-10 w-64 h-64 bg-blue-600 rounded-full blur-3xl opacity-20"></div>
-
-                <h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
-                    <i class="fas fa-terminal text-blue-400"></i> Como rodar no seu PC
-                </h2>
-
-                <div class="space-y-8 relative z-10">
-                    <div class="flex gap-6">
-                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center font-bold">1</div>
-                        <div>
-                            <h3 class="text-xl font-bold mb-2">Instale o XAMPP</h3>
-                            <p class="text-slate-300 mb-2">Baixe e instale o XAMPP (que contém PHP e Apache) do site oficial.</p>
-                            <a href="https://www.apachefriends.org/pt_br/index.html" target="_blank" class="text-blue-300 hover:text-white underline text-sm">Ir para site do XAMPP &rarr;</a>
-                        </div>
-                    </div>
-
-                    <div class="flex gap-6">
-                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center font-bold">2</div>
-                        <div>
-                            <h3 class="text-xl font-bold mb-2">Inicie o Servidor</h3>
-                            <p class="text-slate-300">Abra o painel de controle do XAMPP e clique em <span class="bg-green-600 px-2 py-0.5 rounded text-xs font-bold uppercase">Start</span> na linha do <strong>Apache</strong>.</p>
-                        </div>
-                    </div>
-
-                    <div class="flex gap-6">
-                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center font-bold">3</div>
-                        <div>
-                            <h3 class="text-xl font-bold mb-2">Salve o Arquivo</h3>
-                            <p class="text-slate-300 mb-3">Baixe o arquivo <span class="code-snippet">jobhunter.php</span> clicando no botão abaixo e mova-o para a pasta:</p>
-                            <div class="bg-black/50 p-3 rounded border border-slate-700 font-mono text-sm">
-                                C:\xampp\htdocs\jobhunter.php
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="flex gap-6">
-                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center font-bold">4</div>
-                        <div>
-                            <h3 class="text-xl font-bold mb-2">Acesse</h3>
-                            <p class="text-slate-300">Abra seu navegador e digite:</p>
-                            <a href="http://localhost/jobhunter.php" class="text-blue-300 hover:text-white font-mono text-lg block mt-2">http://localhost/jobhunter.php</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="faq" class="py-20 bg-slate-50">
-        <div class="max-w-3xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center text-slate-900 mb-12">Perguntas Frequentes</h2>
-            
-            <div class="space-y-4">
-                <details class="group bg-white rounded-xl shadow-sm border border-slate-200">
-                    <summary class="flex justify-between items-center cursor-pointer p-6 list-none">
-                        <span class="font-bold text-slate-800">Preciso instalar um banco de dados MySQL?</span>
-                        <span class="transition group-open:rotate-180 text-blue-600"><i class="fas fa-chevron-down"></i></span>
-                    </summary>
-                    <div class="text-slate-600 px-6 pb-6 pt-0 leading-relaxed">
-                        Não! O JobHunter usa <strong>SQLite</strong>. O banco de dados é criado automaticamente em um arquivo simples na primeira vez que você roda o sistema. Zero configuração.
-                    </div>
-                </details>
-
-                <details class="group bg-white rounded-xl shadow-sm border border-slate-200">
-                    <summary class="flex justify-between items-center cursor-pointer p-6 list-none">
-                        <span class="font-bold text-slate-800">Como funciona a busca de vagas?</span>
-                        <span class="transition group-open:rotate-180 text-blue-600"><i class="fas fa-chevron-down"></i></span>
-                    </summary>
-                    <div class="text-slate-600 px-6 pb-6 pt-0 leading-relaxed">
-                        O sistema utiliza a <strong>SerpAPI</strong> para buscar vagas no Google Jobs em tempo real. Você precisará de uma chave de API gratuita da SerpAPI (configurável no painel). Você também pode adicionar vagas manualmente.
-                    </div>
-                </details>
-
-                <details class="group bg-white rounded-xl shadow-sm border border-slate-200">
-                    <summary class="flex justify-between items-center cursor-pointer p-6 list-none">
-                        <span class="font-bold text-slate-800">Meus dados ficam salvos onde?</span>
-                        <span class="transition group-open:rotate-180 text-blue-600"><i class="fas fa-chevron-down"></i></span>
-                    </summary>
-                    <div class="text-slate-600 px-6 pb-6 pt-0 leading-relaxed">
-                        Tudo fica salvo localmente no seu computador, dentro do arquivo <code>jobhunter_dados.db</code>. Nenhuma informação é enviada para servidores externos (exceto para as APIs de busca/IA quando solicitadas).
-                    </div>
-                </details>
-            </div>
-        </div>
-    </section>
-
-    <section id="download" class="py-24 bg-blue-600 text-center px-4 relative overflow-hidden">
-        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
-        <div class="relative z-10 max-w-3xl mx-auto">
-            <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Pronto para acelerar sua carreira?</h2>
-            <p class="text-blue-100 text-lg mb-10">Baixe o código fonte completo agora mesmo. É open source, gratuito e seu para sempre.</p>
-            
-            <button onclick="downloadCode()" class="bg-white text-blue-600 text-xl font-extrabold px-10 py-5 rounded-full shadow-2xl hover:scale-105 transition transform flex items-center justify-center gap-3 mx-auto">
-                <i class="fas fa-download"></i> BAIXAR jobhunter.php (V40)
-            </button>
-            <p class="mt-4 text-blue-200 text-sm">Requer PHP 7.4 ou superior (XAMPP Padrão)</p>
-        </div>
-    </section>
-
-    <footer class="bg-slate-900 text-slate-400 py-10 text-center border-t border-slate-800">
-        <p>&copy; 2026 JobHunter Project. Desenvolvido para transformar buscas em conquistas.</p>
-        <div class="flex justify-center gap-4 mt-4 text-2xl">
-            <a href="#" class="hover:text-white transition"><i class="fab fa-github"></i></a>
-            <a href="#" class="hover:text-white transition"><i class="fab fa-linkedin"></i></a>
-        </div>
-    </footer>
-
-    <script>
-        // Função que contém o código V40 codificado e gera o arquivo
-        function downloadCode() {
-            // CÓDIGO PHP COMPLETO DA V40 (Codificado para string JS)
-            const phpCode = `<?php
+<?php
 /**
- * 💼 JOB HUNTER - ULTIMATE V40 (FAVORITES EDITION)
- * ------------------------------------------------
- * Desenvolvido por: José Lucas Domingues & IA
- * Data: 05/02/2026
+ * 💼 JOB HUNTER - SUPER EDITION
+ * -----------------------------
+ * Sistema limpo e modularizado.
  */
 
+// --- BLOCO 1: CONFIGURAÇÕES E BANCO DE DADOS (BACKEND) ---
 ini_set('display_errors', 0); error_reporting(E_ALL);
-ini_set('upload_max_filesize', '64M'); ini_set('post_max_size', '64M');
-ini_set('memory_limit', '512M'); ini_set('max_execution_time', 300);
-header('Content-Type: text/html; charset=utf-8'); date_default_timezone_set('America/Sao_Paulo');
+header('Content-Type: text/html; charset=utf-8'); 
+date_default_timezone_set('America/Sao_Paulo');
 
-$mensagem = ""; $vagas = []; $areas = []; $lista_curriculos = []; $perfil = []; $conf = [];
-
+// Conexão SQLite Automática
 try {
     $db = new PDO('sqlite:jobhunter_dados.db');
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $db->exec("PRAGMA encoding = 'UTF-8';");
-} catch(PDOException $e) { die("Erro Crítico DB: " . $e->getMessage()); }
+} catch(PDOException $e) { die("Erro no Banco de Dados: " . $e->getMessage()); }
 
+// Criação das Tabelas (se não existirem)
 $db->exec("CREATE TABLE IF NOT EXISTS vagas (id INTEGER PRIMARY KEY, titulo TEXT, empresa TEXT, local TEXT, link TEXT, plataforma TEXT DEFAULT 'Outros', status TEXT DEFAULT '🎯 Na Mira', descricao TEXT, favorito INTEGER DEFAULT 0, data_add DATETIME, texto_data_postagem TEXT, data_limite DATE, json_raw TEXT)");
 $db->exec("CREATE TABLE IF NOT EXISTS config (id INTEGER PRIMARY KEY, serp_api_key TEXT, deepseek_key TEXT, cidade_padrao TEXT, incluir_remoto INTEGER DEFAULT 0, ia_proibicoes TEXT)");
 $db->exec("CREATE TABLE IF NOT EXISTS areas (id INTEGER PRIMARY KEY, nome TEXT)");
@@ -282,255 +25,253 @@ $db->exec("CREATE TABLE IF NOT EXISTS area_vagas (id INTEGER PRIMARY KEY, area_i
 $db->exec("CREATE TABLE IF NOT EXISTS curriculos (id INTEGER PRIMARY KEY, nome TEXT, tipo TEXT, dados BLOB, data_upload DATETIME)");
 $db->exec("CREATE TABLE IF NOT EXISTS perfil (id INTEGER PRIMARY KEY, nome_completo TEXT, cargo_titulo TEXT, email TEXT, telefone TEXT, linkedin TEXT, github TEXT, localizacao TEXT, resumo_base TEXT, skills_hard TEXT, exp1_empresa TEXT, exp1_cargo TEXT, exp1_data TEXT, exp1_desc TEXT, exp2_empresa TEXT, exp2_cargo TEXT, exp2_data TEXT, exp2_desc TEXT)");
 
-// MIGRATIONS
-$colsV = array_column($db->query("PRAGMA table_info(vagas)")->fetchAll(PDO::FETCH_ASSOC), 'name');
-if(!in_array('plataforma', $colsV)) $db->exec("ALTER TABLE vagas ADD COLUMN plataforma TEXT DEFAULT 'Outros'");
-if(!in_array('texto_data_postagem', $colsV)) $db->exec("ALTER TABLE vagas ADD COLUMN texto_data_postagem TEXT");
-if(!in_array('data_limite', $colsV)) $db->exec("ALTER TABLE vagas ADD COLUMN data_limite DATE");
-if(!in_array('favorito', $colsV)) $db->exec("ALTER TABLE vagas ADD COLUMN favorito INTEGER DEFAULT 0");
-
-// INTEGRAÇÕES
-function tempoRelativo($datetime) {
-    if(!$datetime) return 'Recente'; $now = new DateTime; $ago = new DateTime($datetime); $diff = $now->diff($ago);
-    if ($diff->d > 7) return date('d/m/Y', strtotime($datetime));
-    if ($diff->d > 0) return "Há {$diff->d} dias"; if ($diff->h > 0) return "Há {$diff->h} h"; return "Agora";
-}
-
-function gerarResumoIA($vagaDesc, $perfil, $apiKey, $proibicoes) {
-    if(empty($apiKey)) return "ERRO: Configure a DeepSeek API Key.";
-    $prompt = "ATUE COMO ESPECIALISTA TI.\\nCANDIDATO: {$perfil['nome_completo']}, {$perfil['cargo_titulo']}.\\nSKILLS: {$perfil['skills_hard']}.\\nEXP: {$perfil['exp1_cargo']} na {$perfil['exp1_empresa']}.\\nVAGA: $vagaDesc\\nTAREFA: Novo Resumo Profissional (1 parágrafo denso).\\nPROIBIÇÕES: $proibicoes.\\nSAÍDA: Apenas texto.";
-    $ch = curl_init("https://api.deepseek.com/chat/completions");
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); curl_setopt($ch, CURLOPT_POST, true);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, ["Content-Type: application/json", "Authorization: Bearer $apiKey"]);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(["model" => "deepseek-chat", "messages" => [["role" => "system", "content" => "Career Assistant"], ["role" => "user", "content" => $prompt]], "temperature" => 0.6]));
-    $res = curl_exec($ch); curl_close($ch); $json = json_decode($res, true);
-    return $json['choices'][0]['message']['content'] ?? "Erro IA.";
-}
-
-function caçarVagas($termo, $apiKey, $cidade, $incluirRemoto, $db) {
-    if(empty($apiKey)) return "ERRO: SerpAPI Key ausente.";
-    $q = $incluirRemoto ? "$termo ($cidade OR Remoto OR Remote)" : $termo; $loc = $incluirRemoto ? "" : $cidade;
-    $params = ['engine'=>'google_jobs', 'q'=>$q, 'hl'=>'pt', 'gl'=>'br', 'api_key'=>$apiKey]; if(!empty($loc)) $params['location'] = $loc;
-    $ch = curl_init("https://serpapi.com/search.json?" . http_build_query($params));
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-    $res = curl_exec($ch); curl_close($ch); $data = json_decode($res, true); $novas = 0;
-    if(isset($data['jobs_results'])) {
-        foreach($data['jobs_results'] as $job) {
-            $check = $db->prepare("SELECT COUNT(*) FROM vagas WHERE titulo = ? AND empresa = ?"); $check->execute([$job['title'], $job['company_name']]);
-            if($check->fetchColumn() == 0) {
-                $plat = 'Outros'; $link = $job['share_link'] ?? '#';
-                if(stripos($link, 'linkedin')!==false) $plat='LinkedIn'; elseif(stripos($link, 'gupy')!==false) $plat='Gupy';
-                elseif(stripos($link, 'indeed')!==false) $plat='Indeed'; elseif(stripos($link, 'glassdoor')!==false) $plat='Glassdoor';
-                $posted = $job['detected_extensions']['posted_at'] ?? null;
-                $db->prepare("INSERT INTO vagas (titulo, empresa, local, link, plataforma, status, descricao, data_add, texto_data_postagem, json_raw) VALUES (?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, ?, ?)")
-                   ->execute([$job['title'], $job['company_name'], $job['location']??'Remoto', $link, $plat, '🎯 Na Mira', $job['description']??'', $posted, json_encode($job)]);
-                $novas++;
-            }
-        } return $novas;
-    } return 0;
-}
-
-if(isset($_GET['mode']) && $_GET['mode'] == 'print_cv') {
-    $vaga_id = $_GET['vaga_id']; $perfil = $db->query("SELECT * FROM perfil WHERE id = 1")->fetch(PDO::FETCH_ASSOC);
-    $resumo = $_GET['ia_resumo'] ?? ($perfil['resumo_base'] ?? ''); $skills = array_filter(array_map('trim', explode(',', $perfil['skills_hard'] ?? '')));
-    ?>
-    <!DOCTYPE html><html lang="pt-br"><head><meta charset="UTF-8"><title>CV</title><style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
-        body{font-family:'Roboto',Arial,sans-serif;color:#1a1a1a;line-height:1.6;padding:40px;max-width:210mm;margin:0 auto;background:#fff}
-        h1{font-size:24pt;text-transform:uppercase;margin:0;font-weight:700;color:#2563eb} .subtitle{font-size:11pt;font-weight:700;margin:5px 0 20px;color:#444}
-        ul.contact{list-style:none;padding:0;font-size:10pt;display:flex;flex-wrap:wrap;gap:15px} ul.contact li{margin-bottom:2px} ul.contact b{margin-right:5px;color:#2563eb}
-        hr{margin:25px 0;border:0;border-top:2px solid #f0f2f5} h2{font-size:15pt;text-transform:uppercase;font-weight:700;margin-bottom:12px;color:#1a1a1a;border-left:4px solid #2563eb;padding-left:10px}
-        p{font-size:11pt;text-align:justify;margin-bottom:12px;font-weight:300} .exp-header{font-weight:700;display:flex;justify-content:space-between;font-size:11pt}
-        .skills-ul{columns:2;padding-left:20px} .powered-card{margin-top:60px;padding:20px;border:1px solid #e5e7eb;background:#f8fafc;text-align:center;font-size:9pt;border-radius:8px;color:#555}
-        @media print{.no-print{display:none!important} body{padding:0;margin:1.5cm}}
-        .no-print{position:fixed;top:20px;right:20px;display:flex;gap:10px;z-index:999;background:#fff;padding:10px;border:1px solid #ccc;border-radius:8px}
-        .btn{background:#2563eb;color:#fff;padding:8px 15px;text-decoration:none;border-radius:4px;font-weight:bold;font-size:12px;text-transform:uppercase}
-    </style></head><body>
-    <div class="no-print"><a href="jobhunter.php" class="btn" style="background:#333">Voltar</a> <a href="javascript:window.print()" class="btn">Imprimir</a></div>
-    <h1><?= $perfil['nome_completo'] ?></h1><div class="subtitle"><?= $perfil['cargo_titulo'] ?></div>
-    <ul class="contact"><?php if($perfil['email']): ?><li><b>Email:</b> <?= $perfil['email'] ?></li><?php endif; ?><?php if($perfil['telefone']): ?><li><b>Tel:</b> <?= $perfil['telefone'] ?></li><?php endif; ?><?php if($perfil['linkedin']): ?><li><b>LinkedIn:</b> <?= $perfil['linkedin'] ?></li><?php endif; ?></ul><hr>
-    <h2>Resumo Profissional</h2><p><?= nl2br($resumo) ?></p><?php if($skills): ?><ul class="skills-ul"><?php foreach($skills as $s) echo "<li>$s</li>"; ?></ul><?php endif; ?><hr>
-    <h2>Experiência</h2><?php if($perfil['exp1_empresa']): ?><div><div class="exp-header"><span><?= $perfil['exp1_empresa'] ?> | <?= $perfil['exp1_cargo'] ?></span><span><?= $perfil['exp1_data'] ?></span></div><p><?= nl2br($perfil['exp1_desc']) ?></p></div><?php endif; ?>
-    <?php if($perfil['exp2_empresa']): ?><div><div class="exp-header"><span><?= $perfil['exp2_empresa'] ?> | <?= $perfil['exp2_cargo'] ?></span><span><?= $perfil['exp2_data'] ?></span></div><p><?= nl2br($perfil['exp2_desc']) ?></p></div><?php endif; ?>
-    <div class="powered-card">🚀 Vaga encontrada e otimizada via IA pelo <strong>JOBHUNTER</strong>.</div></body></html><?php exit;
-}
-
+// --- BLOCO 2: LÓGICA DE POST (QUANDO VOCÊ CLICA EM BOTÕES) ---
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Adicionar Manualmente
+    if (isset($_POST['add_manual'])) { 
+        $db->prepare("INSERT INTO vagas (titulo, empresa, link, plataforma, status, descricao, data_add) VALUES (?, ?, ?, ?, ?, '🎯 Na Mira', ?, CURRENT_TIMESTAMP)")
+           ->execute([$_POST['titulo'], $_POST['empresa'], $_POST['link'], $_POST['plataforma'], $_POST['descricao']]); 
+        header("Location: index.php"); exit; 
+    }
+    // Atualizar Vaga
+    if (isset($_POST['atualizar_vaga'])) { 
+        $db->prepare("UPDATE vagas SET status = ?, plataforma = ?, data_limite = ? WHERE id = ?")
+           ->execute([$_POST['status'], $_POST['plataforma'], $_POST['data_limite'], $_POST['id']]); 
+        header("Location: index.php"); exit; 
+    }
+    // Excluir Vaga
+    if (isset($_POST['ex_vaga'])) { 
+        $db->prepare("DELETE FROM vagas WHERE id = ?")->execute([$_POST['id']]); 
+        header("Location: index.php"); exit; 
+    }
+    // Salvar Config
     if (isset($_POST['salvar_config'])) {
-        $db->exec("DELETE FROM config"); $db->prepare("INSERT INTO config (id, serp_api_key, deepseek_key, cidade_padrao, incluir_remoto, ia_proibicoes) VALUES (1, ?, ?, ?, ?, ?)")->execute([trim($_POST['serp_key']), trim($_POST['deepseek_key']), trim($_POST['cidade']), isset($_POST['remoto'])?1:0, trim($_POST['ia_proibicoes'])]);
-        header("Location: jobhunter.php"); exit;
+        $db->exec("DELETE FROM config");
+        $db->prepare("INSERT INTO config (id, serp_api_key, deepseek_key, cidade_padrao, incluir_remoto, ia_proibicoes) VALUES (1, ?, ?, ?, ?, ?)")
+           ->execute([trim($_POST['serp_key']), trim($_POST['deepseek_key']), trim($_POST['cidade']), isset($_POST['remoto'])?1:0, trim($_POST['ia_proibicoes'])]);
+        header("Location: index.php"); exit;
     }
-    if (isset($_POST['salvar_perfil'])) {
-        $sql = "INSERT OR REPLACE INTO perfil (id, nome_completo, cargo_titulo, email, telefone, linkedin, github, localizacao, resumo_base, skills_hard, exp1_empresa, exp1_cargo, exp1_data, exp1_desc, exp2_empresa, exp2_cargo, exp2_data, exp2_desc) VALUES (1, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        $db->prepare($sql)->execute([$_POST['nome_completo'], $_POST['cargo_titulo'], $_POST['email'], $_POST['telefone'], $_POST['linkedin'], $_POST['github'], $_POST['localizacao'], $_POST['resumo_base'], $_POST['skills_hard'], $_POST['exp1_empresa'], $_POST['exp1_cargo'], $_POST['exp1_data'], $_POST['exp1_desc'], $_POST['exp2_empresa'], $_POST['exp2_cargo'], $_POST['exp2_data'], $_POST['exp2_desc']]);
-        header("Location: jobhunter.php"); exit;
+    // Favoritar
+    if (isset($_POST['toggle_favorito'])) {
+        $db->prepare("UPDATE vagas SET favorito = CASE WHEN favorito = 1 THEN 0 ELSE 1 END WHERE id = ?")->execute([$_POST['id']]);
+        header("Location: index.php"); exit;
     }
-    if (isset($_POST['excluir_da_pasta'])) { $db->prepare("DELETE FROM area_vagas WHERE id = ?")->execute([$_POST['id']]); header("Location: jobhunter.php"); exit; }
-    if (isset($_POST['gerar_ia'])) { $vaga = $db->query("SELECT descricao FROM vagas WHERE id = {$_POST['vaga_id']}")->fetchColumn(); $perfil = $db->query("SELECT * FROM perfil WHERE id = 1")->fetch(PDO::FETCH_ASSOC); $conf = $db->query("SELECT deepseek_key, ia_proibicoes FROM config WHERE id = 1")->fetch(PDO::FETCH_ASSOC); if(!$perfil) { echo "<script>alert('Preencha o perfil!');window.location='jobhunter.php';<\/script>"; exit; } header("Location: ?mode=print_cv&vaga_id={$_POST['vaga_id']}&ia_resumo=".urlencode(gerarResumoIA($vaga, $perfil, $conf['deepseek_key']??'', $conf['ia_proibicoes']??''))); exit; }
-    if (isset($_POST['upload_cv']) && $_FILES['arquivo']['error'] == 0) { $db->prepare("INSERT INTO curriculos (nome, tipo, dados, data_upload) VALUES (?, ?, ?, CURRENT_TIMESTAMP)")->execute([$_POST['nome_cv']?:$_FILES['arquivo']['name'], $_FILES['arquivo']['type'], file_get_contents($_FILES['arquivo']['tmp_name'])]); header("Location: jobhunter.php"); exit; }
-    if (isset($_POST['del_cv'])) { $db->prepare("DELETE FROM curriculos WHERE id = ?")->execute([$_POST['id']]); header("Location: jobhunter.php"); exit; }
-    if (isset($_POST['cacar_vaga'])) { $conf = $db->query("SELECT * FROM config WHERE id = 1")->fetch(PDO::FETCH_ASSOC); $res = caçarVagas($_POST['termo'], $conf['serp_api_key']??'', $conf['cidade_padrao']??'', $conf['incluir_remoto']??0, $db); $mensagem = is_numeric($res) ? "$res novas vagas!" : $res; }
-    if (isset($_POST['add_manual'])) { $db->prepare("INSERT INTO vagas (titulo, empresa, link, plataforma, status, descricao, data_add) VALUES (?, ?, ?, ?, ?, '🎯 Na Mira', ?, CURRENT_TIMESTAMP)")->execute([$_POST['titulo'], $_POST['empresa'], $_POST['link'], $_POST['plataforma'], $_POST['descricao']]); header("Location: jobhunter.php"); exit; }
-    if (isset($_POST['atualizar_vaga'])) { $db->prepare("UPDATE vagas SET status = ?, plataforma = ?, data_limite = ? WHERE id = ?")->execute([$_POST['status'], $_POST['plataforma'], $_POST['data_limite'], $_POST['id']]); header("Location: jobhunter.php"); exit; }
-    if (isset($_POST['toggle_favorito'])) { $db->prepare("UPDATE vagas SET favorito = CASE WHEN favorito = 1 THEN 0 ELSE 1 END WHERE id = ?")->execute([$_POST['id']]); header("Location: jobhunter.php"); exit; }
-    if (isset($_POST['ex_vaga'])) { $db->prepare("DELETE FROM vagas WHERE id = ?")->execute([$_POST['id']]); $db->prepare("DELETE FROM area_vagas WHERE vaga_id = ?")->execute([$_POST['id']]); header("Location: jobhunter.php"); exit; }
-    if (isset($_POST['criar_area'])) { $db->prepare("INSERT INTO areas (nome) VALUES (?)")->execute([$_POST['nome_area']]); header("Location: jobhunter.php"); exit; }
-    if (isset($_POST['excluir_area'])) { $db->prepare("DELETE FROM areas WHERE id = ?")->execute([$_POST['area_id']]); header("Location: jobhunter.php"); exit; }
-    if (isset($_POST['add_area'])) { if($db->query("SELECT COUNT(*) FROM area_vagas WHERE area_id={$_POST['area_id']} AND vaga_id={$_POST['vaga_id']}")->fetchColumn()==0) $db->prepare("INSERT INTO area_vagas (area_id, vaga_id) VALUES (?, ?)")->execute([$_POST['area_id'], $_POST['vaga_id']]); header("Location: jobhunter.php"); exit; }
-    if (isset($_POST['ol'])) { foreach ($_POST['ol'] as $pos => $id) $db->prepare("UPDATE area_vagas SET ordem = ? WHERE id = ?")->execute([$pos, $id]); exit; }
+    // Lógica simples para reordenação (SortableJS)
+    if (isset($_POST['ol'])) { 
+        foreach ($_POST['ol'] as $pos => $id) $db->prepare("UPDATE area_vagas SET ordem = ? WHERE id = ?")->execute([$pos, $id]); 
+        exit; 
+    }
 }
-if(isset($_GET['baixar_cv'])) { $cv = $db->query("SELECT * FROM curriculos WHERE id = {$_GET['baixar_cv']}")->fetch(PDO::FETCH_ASSOC); if($cv){ header("Content-Type: ".$cv['tipo']); header("Content-Disposition: attachment; filename=\"".$cv['nome'].".pdf\""); echo $cv['dados']; exit; } }
 
-// DADOS FRONTEND
+// --- BLOCO 3: LEITURA DE DADOS (FRONTEND) ---
+$vagas = $db->query("SELECT * FROM vagas ORDER BY data_add DESC LIMIT 100")->fetchAll(PDO::FETCH_ASSOC);
+$stats = [ 
+    'mira' => $db->query("SELECT COUNT(*) FROM vagas WHERE status = '🎯 Na Mira'")->fetchColumn(), 
+    'disputa' => $db->query("SELECT COUNT(*) FROM vagas WHERE status = '🏹 Disputando'")->fetchColumn() 
+];
 $conf = $db->query("SELECT * FROM config WHERE id = 1")->fetch(PDO::FETCH_ASSOC) ?: [];
-$perfil = $db->query("SELECT * FROM perfil WHERE id = 1")->fetch(PDO::FETCH_ASSOC) ?: [];
 $areas = $db->query("SELECT * FROM areas")->fetchAll(PDO::FETCH_ASSOC);
-$lista_curriculos = $db->query("SELECT id, nome, data_upload FROM curriculos ORDER BY id DESC")->fetchAll(PDO::FETCH_ASSOC);
-$plataformas_db = $db->query("SELECT DISTINCT plataforma FROM vagas WHERE plataforma IS NOT NULL AND plataforma != '' ORDER BY plataforma ASC")->fetchAll(PDO::FETCH_COLUMN);
 
-// FILTROS
-$pagina_atual = isset($_GET['pag']) ? (int)$_GET['pag'] : 1;
-if($pagina_atual < 1) $pagina_atual = 1;
-$itens_por_pagina = 50;
-$offset = ($pagina_atual - 1) * $itens_por_pagina;
-
-$view = $_GET['view'] ?? 'grid'; $busca = $_GET['busca'] ?? ''; 
-$filtro_status = $_GET['status'] ?? 'Todos'; 
-$filtro_plat = $_GET['plataforma'] ?? 'Todas'; 
-$filtro_pasta = $_GET['pasta'] ?? 'Todas';
-$filtro_fav = $_GET['favoritos'] ?? 0;
-$ordem_data = $_GET['ordem'] ?? 'DESC';
-
-$where_clause = "WHERE 1=1";
-if($busca) $where_clause .= " AND (titulo LIKE '%$busca%' OR empresa LIKE '%$busca%')";
-if($filtro_fav == 1) { $where_clause .= " AND favorito = 1"; } else {
-    if($filtro_pasta != 'Todas') { $where_clause .= " AND id IN (SELECT vaga_id FROM area_vagas WHERE area_id = $filtro_pasta)"; } 
-    if($filtro_status != 'Todos') $where_clause .= " AND status = '$filtro_status'";
-    if($filtro_plat != 'Todas') $where_clause .= " AND plataforma = '$filtro_plat'";
-}
-
-$total_vagas = $db->query("SELECT COUNT(*) FROM vagas $where_clause")->fetchColumn();
-$total_paginas = ceil($total_vagas / $itens_por_pagina);
-$sql = "SELECT * FROM vagas $where_clause ORDER BY data_add $ordem_data LIMIT 300";
-$vagas = $db->query($sql)->fetchAll(PDO::FETCH_ASSOC);
-$stats = [ 'mira' => $db->query("SELECT COUNT(*) FROM vagas WHERE status = '🎯 Na Mira'")->fetchColumn(), 'disputa' => $db->query("SELECT COUNT(*) FROM vagas WHERE status = '🏹 Disputando'")->fetchColumn() ];
+// Carrega os itens das pastas para o Javascript usar
+$area_items = $db->query("SELECT av.id as item_id, v.*, av.area_id FROM area_vagas av JOIN vagas v ON av.vaga_id = v.id ORDER BY av.ordem ASC")->fetchAll(PDO::FETCH_ASSOC);
 ?>
-<!DOCTYPE html><html lang="pt-br" class="scroll-smooth"><head><meta charset="UTF-8"><title>JobHunter</title>
-<script src="https://cdn.tailwindcss.com"></script><script>tailwind.config={darkMode:'class'}</script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
-<style>
-body { background-color: #f8fafc; color: #1e293b; font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
-.nav-header { background: #ffffff; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 50; padding: 0 20px; box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); }
-.nav-container { max-width: 1128px; margin: 0 auto; height: 56px; display: flex; align-items: center; justify-content: space-between; }
-.card-base { background: #ffffff; border-radius: 10px; border: 1px solid #e2e8f0; box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1); overflow: hidden; margin-bottom: 16px; transition: all 0.2s; }
-.card-base:hover { box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); border-color: #cbd5e1; }
-.btn-primary { background-color: #2563eb; color: white; border-radius: 6px; padding: 8px 16px; font-weight: 600; font-size: 14px; transition: background 0.2s; display: inline-flex; align-items: center; justify-content: center; }
-.btn-primary:hover { background-color: #1d4ed8; }
-.btn-outline { background-color: transparent; color: #2563eb; border: 1px solid #2563eb; border-radius: 6px; padding: 6px 14px; font-weight: 600; font-size: 13px; transition: all 0.2s; }
-.btn-outline:hover { background-color: #eff6ff; }
-.icon-nav { display: flex; align-items: center; justify-content: center; color: #64748b; font-size: 20px; margin-left: 24px; cursor: pointer; transition: color 0.2s; height: 100%; padding: 0 5px; }
-.icon-nav:hover { color: #2563eb; }
-.modal-bg { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(4px); }
-#modal-area { z-index: 100 !important; } #modal-vaga { z-index: 200 !important; } #modal-perfil,#conf-panel,#modal-curriculos { z-index: 150 !important; }
-::-webkit-scrollbar { width: 8px; background: transparent; } ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; } ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
-.platform-badge { font-size: 10px; font-weight: 700; color: #475569; background: #f1f5f9; padding: 3px 8px; border-radius: 6px; letter-spacing: 0.5px; }
-body.dark { background-color: #0f172a; color: #e2e8f0; } body.dark .nav-header { background-color: #1e293b; border-color: #334155; } body.dark .card-base { background-color: #1e293b; border-color: #334155; } body.dark .card-base:hover { border-color: #475569; } body.dark h1, body.dark h2, body.dark h3, body.dark h4 { color: #f8fafc; } body.dark p, body.dark span, body.dark i { color: #cbd5e1; } body.dark input, body.dark select, body.dark textarea { background-color: #020617 !important; border-color: #334155 !important; color: #f8fafc !important; } body.dark .platform-badge { background-color: #334155; color: #e2e8f0; } body.dark .bg-white { background-color: #1e293b !important; } body.dark .bg-gray-50 { background-color: #0f172a !important; } body.dark .border-gray-200 { border-color: #334155 !important; }
-</style></head>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobHunter Painel</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={darkMode:'class'}</script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
-<datalist id="dl_plataformas"><option value="Gupy"><option value="LinkedIn"><option value="Indeed"><option value="Glassdoor"><option value="Catho"><option value="InfoJobs"><?php foreach($plataformas_db as $p) echo "<option value='$p'>"; ?></datalist>
-<nav class="nav-header">
-    <div class="nav-container">
-        <div class="flex items-center gap-3"><div class="text-[#2563eb] text-2xl flex items-center"><i class="fas fa-crosshairs mr-1"></i></div><span class="font-bold text-xl tracking-tight text-gray-800 dark:text-white ml-4 hidden md:block">JobHunter</span></div>
-        <div class="flex items-center h-full">
-            <button onclick="window.location.href='jobhunter.php'" class="icon-nav" title="Início"><i class="fas fa-home"></i></button>
-            <a href="?favoritos=1" class="icon-nav <?= $filtro_fav ? 'text-red-500' : '' ?>" title="Favoritos"><i class="fas fa-heart"></i></a>
-            <button onclick="document.getElementById('modal-perfil').classList.remove('hidden')" class="icon-nav" title="Meu Perfil"><i class="fas fa-user-circle"></i></button>
-            <button onclick="document.getElementById('modal-curriculos').classList.remove('hidden')" class="icon-nav" title="Arquivos"><i class="fas fa-folder"></i></button>
-            <button onclick="document.getElementById('conf-panel').classList.remove('hidden')" class="icon-nav" title="Configurações"><i class="fas fa-sliders-h"></i></button>
-            <a href="#areas-section" class="icon-nav" title="Pastas"><i class="fas fa-box-archive"></i></a>
-        </div>
-    </div>
-</nav>
 
-<div class="max-w-[1128px] mx-auto pt-6 px-4 grid grid-cols-1 md:grid-cols-4 gap-6">
-    <div class="hidden md:block col-span-1">
-        <div class="card-base text-center pb-4 relative">
-            <div class="h-20 bg-gradient-to-r from-blue-600 to-blue-400"></div><div class="relative -mt-10 mb-3"><div class="w-20 h-20 bg-white dark:bg-gray-800 rounded-full mx-auto flex items-center justify-center border-4 border-white dark:border-gray-800 shadow-md text-4xl text-blue-300 cursor-pointer" onclick="document.getElementById('modal-perfil').classList.remove('hidden')"><i class="fas fa-user-tie"></i></div></div><h3 class="font-bold text-lg text-gray-800 dark:text-white hover:text-blue-600 cursor-pointer truncate px-4" onclick="document.getElementById('modal-perfil').classList.remove('hidden')"><?= $perfil['nome_completo'] ?: 'Configurar Perfil' ?></h3><p class="text-sm text-gray-500 dark:text-gray-400 px-4 mb-4 truncate"><?= $perfil['cargo_titulo'] ?: 'Seu Cargo Atual' ?></p><hr class="border-gray-100 dark:border-gray-700 my-3">
-            <div class="text-left px-5 py-1"><div class="flex justify-between text-xs font-semibold text-gray-500 dark:text-gray-400"><span>Na Mira</span><span class="text-blue-600"><?= $stats['mira'] ?></span></div></div><div class="text-left px-5 py-1"><div class="flex justify-between text-xs font-semibold text-gray-500 dark:text-gray-400"><span>Disputando</span><span class="text-orange-600"><?= $stats['disputa'] ?></span></div></div>
-        </div>
-        <div class="card-base p-4 sticky top-20">
-            <h4 class="text-xs font-bold text-gray-400 mb-3 tracking-wider uppercase">Atalhos</h4><button onclick="document.getElementById('manual-add').classList.toggle('hidden')" class="w-full text-left text-sm font-semibold text-gray-600 dark:text-gray-300 flex items-center gap-3 mb-3 hover:text-blue-600 transition p-2 rounded hover:bg-blue-50 dark:hover:bg-gray-700"><i class="fas fa-plus-circle text-blue-500"></i> Adicionar Vaga</button><a href="?status=🏹 Disputando" class="w-full text-left text-sm font-semibold text-gray-600 dark:text-gray-300 flex items-center gap-3 hover:text-blue-600 transition p-2 rounded hover:bg-blue-50 dark:hover:bg-gray-700"><i class="fas fa-fire-alt text-orange-500"></i> Em Disputa</a>
-        </div>
-    </div>
-    <div class="col-span-1 md:col-span-3">
-        <?php if($mensagem): ?><div class="bg-blue-50 text-blue-800 p-4 rounded-xl mb-4 text-sm font-semibold border border-blue-100 flex items-center gap-3 shadow-sm animate-bounce-in"><i class="fas fa-info-circle text-xl"></i> <?= $mensagem ?></div><?php endif; ?>
-        <div class="card-base p-5">
-            <div class="flex gap-3 mb-4"><form method="POST" class="flex-1 relative"><i class="fas fa-search absolute left-4 top-3.5 text-gray-400"></i><input type="text" name="termo" placeholder="Cargo, skill ou empresa..." class="w-full h-12 border border-gray-300 dark:border-gray-600 rounded-lg pl-11 pr-4 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition outline-none font-semibold text-gray-700 dark:text-white dark:bg-gray-800"><button name="cacar_vaga" class="hidden"></button></form><button onclick="document.querySelector('[name=cacar_vaga]').click()" class="btn-primary px-6"><i class="fas fa-bullseye mr-2"></i> Caçar</button></div>
-            <form id="manual-add" method="POST" class="hidden mt-4 p-5 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 animate-fade-in"><h4 class="font-bold text-gray-700 dark:text-gray-300 mb-3">Nova Vaga Manual</h4><div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4"><input type="text" name="titulo" placeholder="Título" class="p-3 border rounded-lg text-sm font-semibold" required><input type="text" name="empresa" placeholder="Empresa" class="p-3 border rounded-lg text-sm font-semibold" required><input type="text" name="link" placeholder="URL" class="p-3 border rounded-lg text-sm"><input type="text" name="plataforma" list="dl_plataformas" placeholder="Plataforma" class="p-3 border rounded-lg text-sm"></div><textarea name="descricao" placeholder="Descrição..." class="w-full p-3 border rounded-lg text-sm h-24 mb-4"></textarea><button name="add_manual" class="btn-primary w-full py-3">Salvar</button></form>
-        </div>
-        <div class="flex flex-wrap justify-between items-center mb-4 px-2 gap-4">
-            <form id="formFiltros" class="flex flex-wrap gap-3 items-center w-full"><input type="hidden" name="view" value="<?= $view ?>"><div class="flex items-center gap-2 bg-white dark:bg-gray-800 border dark:border-gray-600 rounded-lg px-3 py-1.5 shadow-sm"><i class="fas fa-filter text-gray-400 text-xs"></i><select name="status" onchange="this.form.submit()" class="text-sm font-bold text-gray-600 dark:text-gray-300 bg-transparent outline-none cursor-pointer"><option value="Todos">Status: Todos</option><option value="🎯 Na Mira" <?= $filtro_status=='🎯 Na Mira'?'selected':'' ?>>🎯 Na Mira</option><option value="🏹 Disputando" <?= $filtro_status=='🏹 Disputando'?'selected':'' ?>>🏹 Disputando</option></select></div><div class="flex items-center gap-2 bg-white dark:bg-gray-800 border dark:border-gray-600 rounded-lg px-3 py-1.5 shadow-sm"><i class="fas fa-folder-open text-gray-400 text-xs"></i><select name="pasta" onchange="this.form.submit()" class="text-sm font-bold text-gray-600 dark:text-gray-300 bg-transparent outline-none cursor-pointer"><option value="Todas" <?= $filtro_pasta=='Todas'?'selected':'' ?>>Pastas: Todas</option><?php foreach($areas as $a): ?><option value="<?= $a['id'] ?>" <?= $filtro_pasta==$a['id']?'selected':'' ?>><?= substr($a['nome'], 0, 15) ?></option><?php endforeach; ?></select></div><div class="flex items-center gap-2 bg-white dark:bg-gray-800 border dark:border-gray-600 rounded-lg px-3 py-1.5 shadow-sm"><i class="fas fa-layer-group text-gray-400 text-xs"></i><select name="plataforma" onchange="this.form.submit()" class="text-sm font-bold text-gray-600 dark:text-gray-300 bg-transparent outline-none cursor-pointer"><option value="Todas" <?= $filtro_plat=='Todas'?'selected':'' ?>>Plat: Todas</option><?php foreach($plataformas_db as $p): ?><option value="<?= $p ?>" <?= $filtro_plat==$p?'selected':'' ?>><?= substr($p, 0, 15) ?></option><?php endforeach; ?></select></div></form>
-        </div>
-        <script>const GLOBAL_VAGAS = {};</script>
-        <div id="vagas-container" class="flex flex-col gap-4">
-            <?php if(empty($vagas)): ?><div class="card-base p-8 text-center text-gray-500 font-semibold flex flex-col items-center gap-3"><i class="fas fa-inbox text-4xl text-gray-300"></i>Nenhuma vaga encontrada para este filtro.</div><?php endif; ?>
-            <?php foreach($vagas as $v): $time = $v['texto_data_postagem'] ?: tempoRelativo($v['data_add']); $isRemote = stripos($v['local'], 'remot') !== false; $statusColor = match($v['status']) { '🏹 Disputando'=>'text-orange-600 bg-orange-50 border-orange-100', '⚔️ Entrevista'=>'text-blue-600 bg-blue-50 border-blue-100', '✅ Contratado'=>'text-green-600 bg-green-50 border-green-100', '💀 Baixa'=>'text-red-600 bg-red-50 border-red-100', default=>'text-gray-600 bg-gray-50 border-gray-200' }; $jsonVaga = json_encode($v, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP); ?>
-            <script>GLOBAL_VAGAS[<?= $v['id'] ?>] = <?= $jsonVaga ?>;</script>
-            <div class="card-vaga card-base p-5 relative group cursor-pointer" onclick="abrirModal(GLOBAL_VAGAS[<?= $v['id'] ?>])">
-                <div class="absolute top-5 right-5 z-20 flex gap-2 opacity-0 group-hover:opacity-100 transition" onclick="event.stopPropagation()">
-                    <form method="POST"><input type="hidden" name="toggle_favorito" value="1"><input type="hidden" name="id" value="<?= $v['id'] ?>"><button class="text-gray-300 hover:text-red-500 p-2 hover:bg-red-50 rounded-full transition" title="Favoritar"><i class="<?= $v['favorito'] ? 'fas fa-heart text-red-500' : 'far fa-heart' ?>"></i></button></form>
-                    <form method="POST"><input type="hidden" name="ex_vaga" value="1"><input type="hidden" name="id" value="<?= $v['id'] ?>"><button class="text-gray-300 hover:text-red-500 p-2 hover:bg-red-50 rounded-full transition" title="Excluir"><i class="fas fa-trash-alt"></i></button></form>
-                </div>
-                <div class="flex gap-5"><div class="w-14 h-14 bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200 flex items-center justify-center text-gray-400 font-bold text-2xl rounded-xl shadow-sm shrink-0"><?= strtoupper(substr($v['empresa'],0,1)) ?></div><div class="flex-1 min-w-0"><div class="flex justify-between items-start"><h3 class="text-[#2563eb] dark:text-blue-400 font-bold text-xl hover:underline leading-tight truncate pr-8"><?= $v['titulo'] ?></h3></div><p class="text-sm text-gray-700 dark:text-gray-300 font-semibold mt-1 truncate"><?= $v['empresa'] ?> <span class="text-gray-400 mx-1">·</span> <?= $v['local'] ?> <?php if($isRemote): ?><span class="text-purple-600 text-xs font-extrabold ml-1 bg-purple-50 px-2 py-0.5 rounded-full">🏠 REMOTO</span><?php endif; ?></p><div class="flex flex-wrap items-center gap-3 mt-3 text-xs font-semibold text-gray-500 dark:text-gray-400"><span class="flex items-center gap-1"><i class="far fa-clock"></i> <?= $time ?></span><span class="px-2 py-1 rounded border <?= $statusColor ?>"><?= $v['status'] ?></span><span class="platform-badge bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300"><?= $v['plataforma'] ?></span></div><div class="mt-4 flex gap-2 overflow-x-auto pb-1 scrollbar-hide" onclick="event.stopPropagation()"><?php foreach($areas as $a): ?><form method="POST"><input type="hidden" name="add_area" value="1"><input type="hidden" name="vaga_id" value="<?= $v['id'] ?>"><input type="hidden" name="area_id" value="<?= $a['id'] ?>"><button class="btn-outline text-xs px-3 py-1 flex items-center gap-1 hover:shadow-sm whitespace-nowrap" style="border-radius:12px"><i class="fas fa-folder-plus"></i> <?= $a['nome'] ?></button></form><?php endforeach; ?></div></div></div>
+    <nav class="nav-header">
+        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2 text-blue-600 text-xl font-bold">
+                <i class="fas fa-crosshairs"></i> JobHunter
             </div>
-            <?php endforeach; ?>
+            <div class="flex gap-4 text-gray-500 text-lg">
+                <button onclick="window.location.reload()" title="Atualizar"><i class="fas fa-sync-alt hover:text-blue-600"></i></button>
+                <button onclick="document.getElementById('conf-panel').classList.remove('hidden')" title="Config"><i class="fas fa-cog hover:text-blue-600"></i></button>
+                <button onclick="toggleTheme()" title="Tema"><i class="fas fa-moon hover:text-blue-600"></i></button>
+            </div>
         </div>
-        <div id="areas-section" class="mt-12 mb-20"><div class="flex flex-wrap justify-between items-center mb-6 gap-4"><h3 class="font-bold text-xl text-gray-800 dark:text-white flex items-center gap-2"><i class="fas fa-box-archive text-blue-600"></i> Suas Pastas</h3><form method="POST" class="flex gap-2"><input type="text" name="nome_area" placeholder="Nova pasta..." class="border border-gray-300 rounded-lg px-4 py-2 text-sm font-semibold outline-none focus:border-blue-500"><button name="criar_area" class="btn-primary py-2">Criar</button></form></div><div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"><?php foreach($areas as $a): $total = $db->query("SELECT COUNT(*) FROM area_vagas WHERE area_id = {$a['id']}")->fetchColumn(); ?><div class="card-base p-6 cursor-pointer relative group hover:border-blue-300 transition" onclick="carregarArea(<?= $a['id'] ?>, '<?= $a['nome'] ?>')"><form method="POST" class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition" onclick="event.stopPropagation()"><input type="hidden" name="excluir_area" value="1"><input type="hidden" name="area_id" value="<?= $a['id'] ?>"><button class="text-gray-300 hover:text-red-500 p-1 hover:bg-red-50 rounded"><i class="fas fa-trash"></i></button></form><i class="fas fa-folder text-blue-200 text-4xl mb-3 group-hover:text-blue-500 transition"></i><h4 class="font-bold text-lg text-gray-800 dark:text-white truncate"><?= $a['nome'] ?></h4><p class="text-xs text-gray-500 font-semibold"><?= $total ?> itens salvos</p></div><?php endforeach; ?></div></div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto pt-8 px-4 grid grid-cols-1 md:grid-cols-4 gap-6 pb-20">
+        
+        <div class="md:col-span-1 space-y-4">
+            <div class="card-base p-6 text-center">
+                <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-full mx-auto flex items-center justify-center text-2xl text-blue-600 dark:text-blue-300 mb-3">
+                    <i class="fas fa-user-astronaut"></i>
+                </div>
+                <h3 class="font-bold text-lg dark:text-white">Seu Painel</h3>
+                <div class="mt-4 flex justify-between px-4 text-sm font-semibold text-gray-600 dark:text-gray-300">
+                    <span>Na Mira:</span> <span class="text-blue-600"><?= $stats['mira'] ?></span>
+                </div>
+                <div class="flex justify-between px-4 text-sm font-semibold text-gray-600 dark:text-gray-300 mt-1">
+                    <span>Disputando:</span> <span class="text-orange-500"><?= $stats['disputa'] ?></span>
+                </div>
+            </div>
+
+            <button onclick="document.getElementById('manual-add').classList.toggle('hidden')" class="w-full bg-blue-600 text-white font-bold py-3 rounded-xl hover:bg-blue-700 transition shadow-lg shadow-blue-500/30">
+                <i class="fas fa-plus mr-2"></i> Nova Vaga
+            </button>
+        </div>
+
+        <div class="md:col-span-3">
+            
+            <form id="manual-add" method="POST" class="hidden card-base p-6 mb-6 animate-fade-in bg-blue-50 dark:bg-gray-800">
+                <h4 class="font-bold mb-4 dark:text-white">Adicionar Vaga Manualmente</h4>
+                <div class="grid grid-cols-2 gap-4 mb-4">
+                    <input type="text" name="titulo" placeholder="Título da Vaga" required class="p-3 rounded border w-full">
+                    <input type="text" name="empresa" placeholder="Empresa" required class="p-3 rounded border w-full">
+                    <input type="text" name="link" placeholder="Link da vaga" class="p-3 rounded border w-full">
+                    <input type="text" name="plataforma" placeholder="Plataforma (Ex: LinkedIn)" class="p-3 rounded border w-full">
+                </div>
+                <button name="add_manual" class="bg-blue-600 text-white px-6 py-2 rounded font-bold">Salvar</button>
+            </form>
+
+            <div class="space-y-4">
+                <?php if(empty($vagas)): ?>
+                    <div class="text-center py-10 text-gray-400">
+                        <i class="fas fa-ghost text-4xl mb-3"></i>
+                        <p>Nenhuma vaga encontrada. Comece a caçar!</p>
+                    </div>
+                <?php endif; ?>
+
+                <?php foreach($vagas as $v): 
+                    $jsonVaga = json_encode($v, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP);
+                ?>
+                <div class="card-base p-5 flex gap-4 cursor-pointer hover:border-blue-400 group" onclick='abrirModal(<?= $jsonVaga ?>)'>
+                    <div class="w-12 h-12 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center text-xl font-bold text-gray-500">
+                        <?= strtoupper(substr($v['empresa'], 0, 1)) ?>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex justify-between items-start">
+                            <h3 class="font-bold text-lg text-blue-600 dark:text-blue-400 group-hover:underline leading-tight"><?= $v['titulo'] ?></h3>
+                            <div class="flex gap-2">
+                                <form method="POST" onclick="event.stopPropagation()">
+                                    <input type="hidden" name="toggle_favorito" value="1"><input type="hidden" name="id" value="<?= $v['id'] ?>">
+                                    <button class="text-gray-300 hover:text-red-500"><i class="<?= $v['favorito']?'fas fa-heart text-red-500':'far fa-heart' ?>"></i></button>
+                                </form>
+                                <form method="POST" onclick="event.stopPropagation()">
+                                    <input type="hidden" name="ex_vaga" value="1"><input type="hidden" name="id" value="<?= $v['id'] ?>">
+                                    <button class="text-gray-300 hover:text-red-500"><i class="fas fa-trash"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                        <p class="text-sm font-semibold text-gray-600 dark:text-gray-300"><?= $v['empresa'] ?> · <?= $v['local'] ?></p>
+                        <div class="mt-2 flex gap-2 text-xs font-bold text-gray-500">
+                            <span class="bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded"><?= $v['status'] ?></span>
+                            <span class="bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded"><?= $v['plataforma'] ?></span>
+                        </div>
+                    </div>
+                </div>
+                <?php endforeach; ?>
+            </div>
+            
+            <div class="mt-12">
+                <h3 class="font-bold text-xl mb-4 dark:text-white"><i class="fas fa-folder text-yellow-500"></i> Pastas Organizadas</h3>
+                <div class="grid grid-cols-3 gap-4">
+                    <?php foreach($areas as $a): ?>
+                    <div class="card-base p-4 cursor-pointer hover:bg-blue-50 dark:hover:bg-gray-800" onclick="carregarArea(<?= $a['id'] ?>, '<?= $a['nome'] ?>')">
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold dark:text-white"><?= $a['nome'] ?></span>
+                            <i class="fas fa-chevron-right text-gray-300"></i>
+                        </div>
+                    </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <div id="modal-vaga" class="modal-bg fixed inset-0 hidden flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-slate-900 w-full max-w-4xl rounded-xl shadow-2xl flex flex-col max-h-[90vh] overflow-hidden">
+            <div class="p-4 border-b dark:border-gray-700 flex justify-between">
+                <h3 class="font-bold text-lg dark:text-white">Detalhes da Vaga</h3>
+                <button onclick="closeModal('modal-vaga')" class="text-2xl text-gray-400">&times;</button>
+            </div>
+            <div class="flex-1 overflow-y-auto p-6 flex gap-6 flex-col md:flex-row">
+                <div class="w-full md:w-1/3 space-y-4">
+                    <form method="POST">
+                        <input type="hidden" name="atualizar_vaga" value="1">
+                        <input type="hidden" name="id" id="mod-id">
+                        <label class="block text-xs font-bold text-gray-500 uppercase">Status</label>
+                        <select name="status" id="mod-status" class="w-full border p-2 rounded mb-3 dark:bg-slate-800 dark:text-white">
+                            <option>🎯 Na Mira</option><option>🏹 Disputando</option><option>⚔️ Entrevista</option><option>✅ Contratado</option><option>💀 Baixa</option>
+                        </select>
+                        <label class="block text-xs font-bold text-gray-500 uppercase">Plataforma</label>
+                        <input type="text" name="plataforma" id="mod-plataforma" class="w-full border p-2 rounded mb-3 dark:bg-slate-800 dark:text-white">
+                        <label class="block text-xs font-bold text-gray-500 uppercase">Data Limite</label>
+                        <input type="date" name="data_limite" id="mod-datalimite" class="w-full border p-2 rounded mb-4 dark:bg-slate-800 dark:text-white">
+                        <button class="w-full bg-green-600 text-white font-bold py-2 rounded">Salvar</button>
+                    </form>
+                    <a id="mod-link" href="#" target="_blank" class="block text-center w-full border border-gray-300 py-2 rounded font-bold hover:bg-gray-100 dark:text-white dark:hover:text-black">Ver Original <i class="fas fa-external-link-alt"></i></a>
+                    <input type="hidden" id="mod-id-ia"> </div>
+                <div class="flex-1 dark:text-gray-300">
+                    <h2 id="mod-titulo" class="text-2xl font-bold text-gray-900 dark:text-white mb-2"></h2>
+                    <p id="mod-empresa" class="text-blue-600 font-bold mb-4"></p>
+                    <div id="mod-desc" class="prose max-w-none text-sm"></div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
 
-<div class="fixed right-4 top-1/2 -translate-y-1/2 flex flex-col gap-3 z-50"><button onclick="toggleTheme()" class="bg-white dark:bg-black w-12 h-12 rounded-full shadow-xl flex items-center justify-center text-xl transition hover:scale-110 border dark:border-gray-700"><i class="fas fa-adjust text-gray-700 dark:text-white"></i></button></div>
+    <div id="conf-panel" class="modal-bg fixed inset-0 hidden flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-slate-900 w-full max-w-lg rounded-xl shadow-2xl p-6">
+            <div class="flex justify-between mb-4">
+                <h3 class="font-bold text-xl dark:text-white">Configurações</h3>
+                <button onclick="closeModal('conf-panel')" class="text-2xl">&times;</button>
+            </div>
+            <form method="POST" class="space-y-4">
+                <div>
+                    <label class="font-bold text-sm text-gray-600 dark:text-gray-300">Chave SerpAPI (Google Jobs)</label>
+                    <input type="password" name="serp_key" value="<?= htmlspecialchars($conf['serp_api_key']??'') ?>" class="w-full border p-2 rounded dark:bg-slate-800 dark:text-white">
+                </div>
+                <div>
+                    <label class="font-bold text-sm text-gray-600 dark:text-gray-300">Cidade Padrão</label>
+                    <input type="text" name="cidade" value="<?= htmlspecialchars($conf['cidade_padrao']??'') ?>" class="w-full border p-2 rounded dark:bg-slate-800 dark:text-white">
+                </div>
+                <div class="flex items-center gap-2">
+                    <input type="checkbox" name="remoto" id="chkRemoto" <?= ($conf['incluir_remoto']??0)?'checked':'' ?>>
+                    <label for="chkRemoto" class="dark:text-white">Incluir vagas remotas?</label>
+                </div>
+                <button name="salvar_config" class="w-full bg-blue-600 text-white font-bold py-3 rounded">Salvar Tudo</button>
+            </form>
+        </div>
+    </div>
+    
+    <div id="modal-area" class="modal-bg fixed inset-0 hidden flex items-center justify-center p-4">
+        <div class="bg-gray-100 dark:bg-slate-900 w-full max-w-5xl h-[80vh] rounded-xl flex flex-col overflow-hidden">
+            <div class="bg-white dark:bg-slate-800 p-4 flex justify-between items-center border-b dark:border-gray-700">
+                <h3 id="area-titulo" class="font-bold text-xl dark:text-white">Pasta</h3>
+                <button onclick="closeModal('modal-area')" class="text-2xl">&times;</button>
+            </div>
+            <div id="area-grid" class="p-6 grid grid-cols-1 md:grid-cols-3 gap-4 overflow-y-auto">
+                </div>
+        </div>
+    </div>
 
-<div id="modal-vaga" class="modal-bg fixed inset-0 hidden flex items-center justify-center p-4 animate-fade-in" style="z-index: 9999;"><div class="bg-white dark:bg-[#1e293b] w-full max-w-5xl rounded-2xl shadow-2xl flex flex-col max-h-[95vh] overflow-hidden"><div class="p-5 border-b flex justify-between items-center bg-white dark:bg-[#1e293b]"><h3 class="font-bold text-xl text-gray-800 dark:text-white flex items-center gap-2"><i class="fas fa-file-alt text-blue-600"></i> Detalhes</h3><button onclick="closeModal('modal-vaga')" class="text-3xl text-gray-400 hover:text-gray-800">&times;</button></div><div class="flex-1 overflow-y-auto flex flex-col md:flex-row bg-[#f8fafc] dark:bg-black"><div class="bg-white dark:bg-[#1e293b] p-6 border-r border-gray-200 dark:border-gray-700 w-full md:w-1/3 lg:w-1/4 h-fit md:sticky md:top-0"><form method="POST" class="flex flex-col gap-5"><input type="hidden" name="atualizar_vaga" value="1"><input type="hidden" name="id" id="mod-id"><div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-xl border border-gray-100 dark:border-gray-700"><label class="text-xs font-extrabold text-blue-600 dark:text-blue-400 uppercase tracking-wider mb-3 block">Classificação</label><div class="mb-3"><label class="text-xs font-bold text-gray-500 dark:text-gray-400 block mb-1">Status</label><select name="status" id="mod-status" class="w-full border-2 p-2 rounded-lg font-bold outline-none focus:border-blue-500 cursor-pointer dark:bg-[#0f172a] dark:text-white dark:border-gray-600"><option>🎯 Na Mira</option><option>🏹 Disputando</option><option>⚔️ Entrevista</option><option>✅ Contratado</option><option>💀 Baixa</option></select></div><div><label class="text-xs font-bold text-gray-500 dark:text-gray-400 block mb-1">Plataforma</label><input type="text" name="plataforma" id="mod-plataforma" list="dl_plataformas" class="w-full border-2 p-2 rounded-lg font-bold outline-none focus:border-blue-500 dark:bg-[#0f172a] dark:text-white dark:border-gray-600"></div></div><div><label class="text-xs font-extrabold text-gray-500 uppercase tracking-wider mb-2 block">Data Limite</label><input type="date" name="data_limite" id="mod-datalimite" class="w-full border-2 p-3 rounded-xl font-bold text-gray-700 outline-none focus:border-blue-500 dark:bg-[#0f172a] dark:text-white dark:border-gray-600"></div><button class="btn-primary w-full py-3 text-sm">Salvar Alterações</button></form><hr class="my-6 border-gray-100 dark:border-gray-700"><h4 class="text-xs font-extrabold text-gray-500 uppercase tracking-wider mb-3">Ações</h4><form method="POST" target="_blank"><input type="hidden" name="gerar_ia" value="1"><input type="hidden" name="vaga_id" id="mod-id-ia"><button class="btn-outline w-full mb-3 py-3 flex items-center justify-center gap-2 hover:bg-blue-50 hover:border-blue-300 transition"><i class="fas fa-robot text-blue-500 text-lg"></i> Gerar CV IA</button></form><a id="mod-link" href="#" target="_blank" class="w-full py-3 border-2 border-gray-200 dark:border-gray-600 text-gray-600 dark:text-gray-300 font-bold rounded-xl flex items-center justify-center gap-2 hover:bg-gray-50 transition text-sm">Acessar Original <i class="fas fa-external-link-alt"></i></a></div><div class="p-8 md:p-10 flex-1 bg-white dark:bg-[#1e293b]"><h2 id="mod-titulo" class="text-3xl font-extrabold text-gray-900 dark:text-white mb-2 leading-tight"></h2><div class="flex gap-4 mb-6"><p id="mod-empresa" class="text-lg text-blue-600 font-bold flex items-center gap-2"></p><span id="mod-postado" class="text-xs text-gray-400 font-bold uppercase flex items-center gap-1"></span></div><div class="text-sm text-gray-800 dark:text-gray-300 leading-relaxed whitespace-pre-line prose max-w-none" id="mod-desc"></div></div></div></div></div>
-
-<div id="modal-area" class="modal-bg fixed inset-0 hidden flex items-center justify-center p-4 animate-fade-in"><div class="bg-[#f8fafc] dark:bg-black w-full max-w-6xl h-[90vh] rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-gray-200 dark:border-gray-700"><div class="bg-white dark:bg-[#1e293b] p-5 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center"><div class="flex items-center gap-4"><h3 class="font-bold text-xl flex items-center gap-3 text-gray-800 dark:text-white"><i class="fas fa-folder-open text-blue-600"></i> <span id="area-titulo">...</span></h3></div><button onclick="closeModal('modal-area')" class="text-gray-400 hover:text-gray-800 text-3xl">&times;</button></div><div id="area-grid" class="p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 overflow-y-auto"></div></div></div>
-<div id="conf-panel" class="modal-bg fixed inset-0 hidden flex items-center justify-center p-4 animate-fade-in"><div class="bg-white w-full max-w-2xl rounded-2xl shadow-2xl p-8 animate-fade-in-down"><div class="flex justify-between mb-6 items-center"><h3 class="font-bold text-2xl flex items-center gap-3"><i class="fas fa-cogs text-blue-600"></i> Configurações</h3><button onclick="closeModal('conf-panel')" class="text-3xl text-gray-400 hover:text-red-500">&times;</button></div><form method="POST" class="grid gap-5"><div class="space-y-2"><label class="text-sm font-bold text-gray-700">Chave SerpAPI</label><input type="password" name="serp_key" value="<?= htmlspecialchars($conf['serp_api_key']??'') ?>" class="w-full border-2 p-3 rounded-xl font-mono text-sm focus:border-blue-500 outline-none"></div><div class="space-y-2"><label class="text-sm font-bold text-gray-700">Chave DeepSeek</label><input type="password" name="deepseek_key" value="<?= htmlspecialchars($conf['deepseek_key']??'') ?>" class="w-full border-2 p-3 rounded-xl font-mono text-sm focus:border-blue-500 outline-none"></div><div class="grid grid-cols-2 gap-4"><div class="space-y-2"><label class="text-sm font-bold text-gray-700">Cidade Padrão</label><input type="text" name="cidade" value="<?= htmlspecialchars($conf['cidade_padrao']??'') ?>" class="w-full border-2 p-3 rounded-xl font-semibold focus:border-blue-500 outline-none"></div><div class="flex items-center gap-3 bg-blue-50 p-3 rounded-xl border border-blue-100"><input type="checkbox" name="remoto" id="chkRemoto" class="w-5 h-5 accent-blue-600" <?= ($conf['incluir_remoto']??0)?'checked':'' ?>><label for="chkRemoto" class="text-sm font-bold text-blue-800 cursor-pointer">Incluir Remoto?</label></div></div><div class="space-y-2"><label class="text-sm font-bold text-gray-700">Proibições IA</label><textarea name="ia_proibicoes" class="w-full border-2 p-3 rounded-xl text-sm h-32 focus:border-blue-500 outline-none"><?= htmlspecialchars($conf['ia_proibicoes']??'') ?></textarea></div><button name="salvar_config" class="btn-primary w-full py-4 text-lg rounded-xl mt-4 shadow-md">Salvar Configurações</button></form></div></div>
-<div id="modal-curriculos" class="modal-bg fixed inset-0 hidden flex items-center justify-center p-4 animate-fade-in"><div class="bg-white w-full max-w-3xl rounded-2xl shadow-2xl flex flex-col max-h-[80vh] overflow-hidden border border-gray-200"><div class="p-5 border-b flex justify-between items-center bg-white"><h3 class="font-bold text-xl flex items-center gap-3"><i class="fas fa-file-pdf text-red-600"></i> Currículos</h3><button onclick="closeModal('modal-curriculos')" class="text-3xl text-gray-400 hover:text-gray-800">&times;</button></div><div class="p-6 bg-[#f8fafc] flex-1 overflow-y-auto"><form method="POST" enctype="multipart/form-data" class="flex gap-3 mb-8 bg-white p-4 rounded-xl shadow-sm border"><input type="hidden" name="upload_cv" value="1"><input type="text" name="nome_cv" placeholder="Nome do arquivo" class="flex-1 p-3 border rounded-xl font-semibold outline-none focus:border-blue-500"><label class="cursor-pointer bg-red-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-red-700 transition flex items-center gap-2 shadow-md"><i class="fas fa-cloud-upload-alt"></i> Upload<input type="file" name="arquivo" accept="application/pdf" class="hidden" onchange="this.form.submit()"></label></form><div class="flex flex-col gap-3"><?php foreach($lista_curriculos as $cv): ?><div class="flex items-center justify-between bg-white p-4 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition"><div class="flex items-center gap-4"><div class="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center text-red-500 text-2xl"><i class="fas fa-file-pdf"></i></div><div><p class="font-bold text-gray-800"><?= $cv['nome'] ?></p><p class="text-xs text-gray-500 font-semibold mt-1"><?= date('d/m/Y H:i', strtotime($cv['data_upload'])) ?></p></div></div><div class="flex gap-2"><a href="?baixar_cv=<?= $cv['id'] ?>" class="btn-outline border-gray-300 text-gray-600 hover:text-blue-600 px-3 py-2"><i class="fas fa-download"></i></a><form method="POST"><input type="hidden" name="del_cv" value="1"><input type="hidden" name="id" value="<?= $cv['id'] ?>"><button class="btn-outline border-gray-300 text-gray-600 hover:text-red-600 px-3 py-2" onclick="return confirm('Excluir?')"><i class="fas fa-trash-alt"></i></button></form></div></div><?php endforeach; ?></div></div></div></div>
-<div id="modal-perfil" class="modal-bg fixed inset-0 hidden flex items-center justify-center p-4 z-50"><div class="bg-white w-full max-w-4xl rounded-2xl shadow-2xl flex flex-col max-h-[95vh] overflow-hidden animate-fade-in-up"><div class="p-5 border-b bg-white flex justify-between items-center"><h3 class="font-bold text-xl flex items-center gap-2"><i class="fas fa-user-edit text-blue-600"></i> Editar Perfil</h3><button onclick="closeModal('modal-perfil')" class="text-3xl text-gray-400 hover:text-gray-800">&times;</button></div><form method="POST" class="flex-1 overflow-y-auto p-8 grid grid-cols-1 md:grid-cols-2 gap-8 bg-[#f8fafc]"><input type="hidden" name="salvar_perfil" value="1"><div class="space-y-6"><h4 class="font-extrabold text-gray-800 border-b pb-3 mb-2">Informações</h4><input name="nome_completo" value="<?= htmlspecialchars($perfil['nome_completo']??'') ?>" class="w-full p-3 border rounded-xl font-semibold" placeholder="Nome"><input name="cargo_titulo" value="<?= htmlspecialchars($perfil['cargo_titulo']??'') ?>" class="w-full p-3 border rounded-xl font-semibold" placeholder="Cargo"><div class="grid grid-cols-2 gap-4"><input name="email" value="<?= htmlspecialchars($perfil['email']??'') ?>" class="w-full p-3 border rounded-xl text-sm" placeholder="Email"><input name="telefone" value="<?= htmlspecialchars($perfil['telefone']??'') ?>" class="w-full p-3 border rounded-xl text-sm" placeholder="Tel"></div><div class="grid grid-cols-2 gap-4"><input name="linkedin" value="<?= htmlspecialchars($perfil['linkedin']??'') ?>" class="w-full p-3 border rounded-xl text-sm" placeholder="LinkedIn"><input name="github" value="<?= htmlspecialchars($perfil['github']??'') ?>" class="w-full p-3 border rounded-xl text-sm" placeholder="GitHub"></div><input name="localizacao" value="<?= htmlspecialchars($perfil['localizacao']??'') ?>" class="w-full p-3 border rounded-xl text-sm" placeholder="Local"></div><div class="space-y-6"><h4 class="font-extrabold text-gray-800 border-b pb-3 mb-2">IA Base</h4><textarea name="resumo_base" class="w-full h-40 p-3 border rounded-xl text-sm font-medium" placeholder="Resumo Base"><?= htmlspecialchars($perfil['resumo_base']??'') ?></textarea><textarea name="skills_hard" class="w-full h-32 p-3 border rounded-xl text-sm font-medium" placeholder="Skills"><?= htmlspecialchars($perfil['skills_hard']??'') ?></textarea></div><div class="md:col-span-2 mt-4"><h4 class="font-extrabold text-gray-800 border-b pb-3 mb-4">Experiência</h4><div class="bg-white p-5 rounded-xl border mb-4 shadow-sm"><div class="grid grid-cols-3 gap-4 mb-3"><input name="exp1_empresa" value="<?= htmlspecialchars($perfil['exp1_empresa']??'') ?>" placeholder="Empresa" class="p-3 border rounded-xl text-sm font-semibold"><input name="exp1_cargo" value="<?= htmlspecialchars($perfil['exp1_cargo']??'') ?>" placeholder="Cargo" class="p-3 border rounded-xl text-sm font-semibold"><input name="exp1_data" value="<?= htmlspecialchars($perfil['exp1_data']??'') ?>" placeholder="Data" class="p-3 border rounded-xl text-sm"></div><textarea name="exp1_desc" class="w-full p-3 border rounded-xl text-sm h-24" placeholder="Descrição..."><?= htmlspecialchars($perfil['exp1_desc']??'') ?></textarea></div><div class="bg-white p-5 rounded-xl border shadow-sm opacity-75"><div class="grid grid-cols-3 gap-4 mb-3"><input name="exp2_empresa" value="<?= htmlspecialchars($perfil['exp2_empresa']??'') ?>" placeholder="Empresa" class="p-3 border rounded-xl text-sm font-semibold"><input name="exp2_cargo" value="<?= htmlspecialchars($perfil['exp2_cargo']??'') ?>" placeholder="Cargo" class="p-3 border rounded-xl text-sm font-semibold"><input name="exp2_data" value="<?= htmlspecialchars($perfil['exp2_data']??'') ?>" placeholder="Data" class="p-3 border rounded-xl text-sm"></div><textarea name="exp2_desc" class="w-full p-3 border rounded-xl text-sm h-24" placeholder="Descrição..."><?= htmlspecialchars($perfil['exp2_desc']??'') ?></textarea></div></div><div class="md:col-span-2 sticky bottom-0 bg-white pt-4 border-t"><button class="btn-primary w-full py-4 text-lg rounded-xl shadow-lg">Salvar Perfil</button></div></form></div></div>
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => { if(localStorage.getItem('theme')==='dark') document.body.classList.add('dark'); });
-    function toggleTheme(){document.body.classList.toggle('dark');localStorage.setItem('theme',document.body.classList.contains('dark')?'dark':'light');}
-    function closeModal(id){document.getElementById(id).classList.add('hidden');}
-    function abrirModal(vaga) {
-        if(!vaga) return;
-        document.getElementById('mod-id').value = vaga.id; document.getElementById('mod-id-ia').value = vaga.id;
-        document.getElementById('mod-titulo').innerText = vaga.titulo; document.getElementById('mod-empresa').innerHTML = `<i class="fas fa-building"></i> ${vaga.empresa}`;
-        document.getElementById('mod-status').value = vaga.status; 
-        document.getElementById('mod-plataforma').value = vaga.plataforma; 
-        document.getElementById('mod-datalimite').value = vaga.data_limite || '';
-        document.getElementById('mod-postado').innerHTML = `<i class="far fa-clock"></i> ${vaga.texto_data_postagem || 'Recente'}`;
-        document.getElementById('mod-link').href = vaga.link; 
-        const descDiv = document.getElementById('mod-desc');
-        if(vaga.descricao && vaga.descricao !== "null" && vaga.descricao.trim() !== "") { descDiv.innerHTML = vaga.descricao.replace(/\n/g, '<br>'); } 
-        else { descDiv.innerHTML = '<p class="text-gray-400 italic">Nenhuma descrição disponível.</p>'; }
-        document.getElementById('modal-vaga').classList.remove('hidden');
-    }
-    const AREA_DB = {};
-    <?php $items = $db->query("SELECT av.id as item_id, v.*, av.area_id FROM area_vagas av JOIN vagas v ON av.vaga_id = v.id ORDER BY av.ordem ASC")->fetchAll(PDO::FETCH_ASSOC); foreach($items as $i) { $jsonVagaPasta = json_encode($i, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP); echo "AREA_DB[{$i['item_id']}]=$jsonVagaPasta;\n"; } ?>
-    function carregarArea(id, nome) {
-        const grid = document.getElementById('area-grid'); document.getElementById('area-titulo').innerText = nome;
-        document.getElementById('modal-area').classList.remove('hidden'); grid.innerHTML = '';
-        const itens = Object.values(AREA_DB).filter(i => i.area_id == id);
-        if(itens.length===0){grid.innerHTML='<div class="col-span-full py-20 text-center text-gray-400 font-bold flex flex-col items-center gap-3"><i class="fas fa-folder-open text-4xl text-gray-200"></i> Pasta Vazia</div>'; return;}
-        itens.forEach(v => {
-            let statusClass = v.status.includes('Disputando') ? 'bg-orange-50 text-orange-600 border-orange-100' : 'bg-gray-50 text-gray-500 border-gray-100';
-            // ESCAPE PARA CLICK NA PASTA
-            let safeVaga = JSON.stringify(v).replace(/"/g, '&quot;');
-            grid.innerHTML += `<div class="bg-white dark:bg-gray-800 p-4 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm relative group hover:border-blue-300 transition" data-id="${v.item_id}"><div class="absolute top-3 right-3 z-20 group-hover:opacity-100 transition opacity-0"><form method="POST"><input type="hidden" name="excluir_da_pasta" value="1"><input type="hidden" name="id" value="${v.item_id}"><button class="text-gray-300 hover:text-red-500 p-1"><i class="fas fa-trash-alt"></i></button></form></div><h4 class="font-bold text-base text-[#2563eb] dark:text-blue-400 cursor-pointer hover:underline leading-tight mb-1" onclick='abrirModal(${safeVaga})'>${v.titulo}</h4><p class="text-xs text-gray-700 dark:text-gray-300 font-bold mb-3">${v.empresa}</p><div class="pt-2 border-t border-gray-100 dark:border-gray-700"><span class="text-xs font-extrabold px-2 py-1 rounded border ${statusClass}">${v.status}</span></div></div>`;
-        });
-        new Sortable(grid, { animation:150, onEnd: function() { let ids = Array.from(grid.querySelectorAll('[data-id]')).map(el => el.dataset.id); let fd = new FormData(); ids.forEach((id, i) => fd.append(`ol[${i}]`, id)); fetch(window.location.href, { method: 'POST', body: fd }); } });
-    }
-</script>
-</body></html>
+    <script>
+        window.AREA_DB = {};
+        <?php foreach($area_items as $i) { 
+            $jsonVagaPasta = json_encode($i, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP); 
+            echo "window.AREA_DB[{$i['item_id']}] = $jsonVagaPasta;\n"; 
+        } ?>
+    </script>
+    
+    <script src="script.js"></script>
+</body>
+</html>
